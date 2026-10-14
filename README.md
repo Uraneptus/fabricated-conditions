@@ -1,4 +1,15 @@
-# Forged Conditions
+# Fabricated Conditions
+Plan:
+1. Convert basic neo conditions to exact fabric equivalent (And, Or, True, Not)
+2. Add simple translations 
+   - neo:false -> fabric:not + fabric:true
+3. Add more complex translations
+   - tbd
+4. Later: Ability to create new conditions that can be parsed on both launchers.
+
+
+---
+# Forged Conditions (deprecated, look at [Original](https://github.com/TheRealWormbo/forged-conditions?tab=readme-ov-file))
 
 A Neoforge data load condition generator for Fabric
 

@@ -1,0 +1,35 @@
+package de.wormbo.mixin;
+
+import com.google.gson.JsonObject;
+import com.mojang.serialization.JsonOps;
+import de.wormbo.ForgedConditions;
+import de.wormbo.conditions.LoadCondition;
+import de.wormbo.converter.ConvertibleCondition;
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
+import net.fabricmc.fabric.impl.datagen.FabricDataGenHelper;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.Arrays;
+
+/**
+ * Hooks into the Fabric datagen logic that adds the Fabric resource condition entry to the JSON output.
+ */
+@SuppressWarnings("UnstableApiUsage")
+@Mixin(FabricDataGenHelper.class)
+public abstract class FabricDataGenHelperMixin {
+	@Inject(method = "addConditions(Lcom/google/gson/JsonObject;" +
+			"[Lnet/fabricmc/fabric/api/resource/conditions/v1/ResourceCondition;)V",
+			at = @At(value = "INVOKE", target = "Lcom/google/gson/JsonObject;add(Ljava/lang/String;" +
+					"Lcom/google/gson/JsonElement;)V"))
+	private static void addNeoforgeConditions(JsonObject baseObject, ResourceCondition[] conditions, CallbackInfo ci) {
+		baseObject.add(ForgedConditions.CONDITIONS_KEY, LoadCondition.LIST_CODEC.encodeStart(JsonOps.INSTANCE,
+				Arrays.stream(conditions)
+						.map(ConvertibleCondition.class::cast)
+						.map(ConvertibleCondition::forgedconditions_convert)
+						.toList()
+		).getOrThrow());
+	}
+}
