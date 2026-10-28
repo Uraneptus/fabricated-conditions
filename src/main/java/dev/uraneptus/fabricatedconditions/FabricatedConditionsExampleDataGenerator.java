@@ -44,19 +44,8 @@ public class FabricatedConditionsExampleDataGenerator {
                     .pattern(" E ")
                     .unlockedBy("has_Star", has(Items.NETHER_STAR))
                     .save(recipeOutput.withConditions(new AndCondition(List.of(
-                            new OrCondition(List.of(
-                                    new ModLoadedCondition("craftable_endportal_frames"),
-                                    new ModLoadedCondition("better-end-access")
-                            )),
-                            new AndCondition(List.of(
-                                    new ItemExistsCondition(BuiltInRegistries.ITEM.getKey(Items.NETHER_STAR)),
-                                    new ItemExistsCondition(BuiltInRegistries.ITEM.getKey(Items.END_STONE))
-                            )),
-                            //no block exists condition on neo
-                            new OrCondition(List.of(
-                                    new TagEmptyCondition(ItemTags.PICKAXES),
-                                    new TagEmptyCondition(ItemTags.SHOVELS)
-                            ))
+                            new ModLoadedCondition("craftable_endportal_frames"),
+                            new ModLoadedCondition("better-end-access")
                     ))), fcId("example-recipe"));
                     /*
                     .save(withConditions(exporter,

@@ -1,46 +1,34 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:and",
+      "values": [
+        {
+          "condition": "fabric:any_mods_loaded",
+          "values": [
+            "craftable_endportal_frames"
+          ]
+        },
+        {
+          "condition": "fabric:any_mods_loaded",
+          "values": [
+            "better-end-access"
+          ]
+        }
+      ]
+    }
+  ],
   "neoforge:conditions": [
     {
       "type": "neoforge:and",
       "values": [
         {
-          "type": "neoforge:or",
-          "values": [
-            {
-              "type": "neoforge:mod_loaded",
-              "modid": "craftable_endportal_frames"
-            },
-            {
-              "type": "neoforge:mod_loaded",
-              "modid": "better-end-access"
-            }
-          ]
+          "type": "neoforge:mod_loaded",
+          "modid": "craftable_endportal_frames"
         },
         {
-          "type": "neoforge:and",
-          "values": [
-            {
-              "type": "neoforge:item_exists",
-              "item": "minecraft:nether_star"
-            },
-            {
-              "type": "neoforge:item_exists",
-              "item": "minecraft:end_stone"
-            }
-          ]
-        },
-        {
-          "type": "neoforge:or",
-          "values": [
-            {
-              "type": "neoforge:tag_empty",
-              "tag": "minecraft:pickaxes"
-            },
-            {
-              "type": "neoforge:tag_empty",
-              "tag": "minecraft:shovels"
-            }
-          ]
+          "type": "neoforge:mod_loaded",
+          "modid": "better-end-access"
         }
       ]
     }

@@ -1,14 +1,18 @@
 {
-	"required": true,
-	"package": "dev.uraneptus.fabricatedconditions.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
-	}
+  "required": true,
+  "package": "dev.uraneptus.fabricatedconditions.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AndConditionMixin",
+    "DataProviderMixin",
+    "IConditionMixin",
+    "ModLoadedConditionMixin",
+    "TrueConditionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }
