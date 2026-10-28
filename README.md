@@ -6,6 +6,7 @@ Plan:
 3. Add more complex translations
    - tbd
 4. Later: Ability to create new conditions that can be parsed on both launchers.
+5. Make compatible with DatapackBuiltinEntriesProvider if needed
 
 
 ---
