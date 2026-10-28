@@ -1,4 +1,23 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:and",
+      "values": [
+        {
+          "condition": "fabric:any_mods_loaded",
+          "values": [
+            "craftable_endportal_frames"
+          ]
+        },
+        {
+          "condition": "fabric:any_mods_loaded",
+          "values": [
+            "better-end-access"
+          ]
+        }
+      ]
+    }
+  ],
   "neoforge:conditions": [
     {
       "type": "neoforge:and",

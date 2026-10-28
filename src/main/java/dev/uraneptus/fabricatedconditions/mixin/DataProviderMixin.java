@@ -35,7 +35,7 @@ public interface DataProviderMixin {
     }
 
     @Inject(method = "saveStable(Lnet/minecraft/data/CachedOutput;Lnet/minecraft/core/HolderLookup$Provider;Lcom/mojang/serialization/Codec;Ljava/lang/Object;Ljava/nio/file/Path;)Ljava/util/concurrent/CompletableFuture;",
-            at = @At("TAIL"),
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/data/DataProvider;saveStable(Lnet/minecraft/data/CachedOutput;Lcom/google/gson/JsonElement;Ljava/nio/file/Path;)Ljava/util/concurrent/CompletableFuture;"),
             locals = LocalCapture.CAPTURE_FAILSOFT
     )
     private static <T> void addFabricEConditions(CachedOutput output, HolderLookup.Provider registries, Codec<T> codec, T value, Path path, CallbackInfoReturnable<CompletableFuture<?>> cir, RegistryOps<JsonElement> registryops, JsonElement element) {
