@@ -100,12 +100,22 @@ neoForge.ideSyncTask generateModMetadata
 publishing {
     publications {
         register('mavenJava', MavenPublication) {
+            artifactId base.archivesName.get()
             from components.java
         }
     }
     repositories {
         maven {
-            url "file://${project.projectDir}/repo"
+            name = "Mosaic-Modding-Maven"
+            url = System.getenv("MM_MAVEN_URL")
+
+            credentials(HttpHeaderCredentials) {
+                name = "X-Custom-Auth-Key"
+                value = System.getenv("AUTH_KEY_SECRET")
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
         }
     }
 }
