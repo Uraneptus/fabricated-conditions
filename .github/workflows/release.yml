@@ -37,7 +37,7 @@ jobs:
       - name: Set environment variables
         run: | 
           echo "AUTH_KEY_SECRET=${{ secrets.AUTH_KEY_SECRET }}" >> $GITHUB_ENV
-          echo "MM_MAVEN_URL=https://maven.mosaicmodding.com/" >> $GITHUB_ENV
+          echo "MM_MAVEN_URL=https://maven.mosaicmodding.com/release/" >> $GITHUB_ENV
 
       # Build mod files
       - name: Build with Gradle
