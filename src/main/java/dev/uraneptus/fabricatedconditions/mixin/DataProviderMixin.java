@@ -27,7 +27,6 @@ import java.util.concurrent.CompletableFuture;
 @Mixin(DataProvider.class)
 public interface DataProviderMixin {
 
-    //works
     @Dynamic("lambda method passed to Util.make for FIXED_ORDER_FIELDS")
     @Inject(method = "lambda$static$0(Lit/unimi/dsi/fastutil/objects/Object2IntOpenHashMap;)V", at = @At("HEAD"))
     private static void fabricatedconditions_injectFabricConditionsSortOrder(Object2IntOpenHashMap<String> map, CallbackInfo ci) {

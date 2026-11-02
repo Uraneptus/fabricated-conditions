@@ -36,6 +36,7 @@ public class Handler {
                     for (ICondition condition : conditions) {
                         var convertable = (ConvertibleCondition) condition;
                         var loadCondition = convertable.fabricatedconditions_convert();
+                        if (loadCondition == null) continue;
                         loadConditions.add(loadCondition);
                     }
                     JsonElement result = LoadCondition.LIST_CODEC.encodeStart(registryops, loadConditions).getOrThrow();
