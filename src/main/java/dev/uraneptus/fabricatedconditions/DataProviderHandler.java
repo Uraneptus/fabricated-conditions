@@ -29,8 +29,10 @@ public class DataProviderHandler {
                         if (loadCondition == null) continue;
                         fakeFabricConditions.add(loadCondition);
                     }
-                    JsonElement result = FakeFabricCondition.LIST_CODEC.encodeStart(registryops, fakeFabricConditions).getOrThrow();
-                    obj.add(FabricatedConditionsMod.CONDITIONS_KEY, result);
+                    if (!fakeFabricConditions.isEmpty()) {
+                        JsonElement result = FakeFabricCondition.LIST_CODEC.encodeStart(registryops, fakeFabricConditions).getOrThrow();
+                        obj.add(FabricatedConditionsMod.CONDITIONS_KEY, result);
+                    }
                 }
             }
         }
