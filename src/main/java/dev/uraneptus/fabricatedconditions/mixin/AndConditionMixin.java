@@ -4,7 +4,6 @@ import dev.uraneptus.fabricatedconditions.FabricatedConditions;
 import dev.uraneptus.fabricatedconditions.conditions.ConvertibleCondition;
 import dev.uraneptus.fabricatedconditions.conditions.FabricAndCondition;
 import dev.uraneptus.fabricatedconditions.conditions.LoadCondition;
-import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.conditions.AndCondition;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import org.spongepowered.asm.mixin.Mixin;

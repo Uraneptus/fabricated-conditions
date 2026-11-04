@@ -2,9 +2,6 @@ package dev.uraneptus.fabricatedconditions.conditions;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import dev.uraneptus.fabricatedconditions.FabricatedConditions;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
 

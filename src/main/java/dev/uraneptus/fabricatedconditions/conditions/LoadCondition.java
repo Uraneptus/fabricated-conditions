@@ -3,8 +3,6 @@ package dev.uraneptus.fabricatedconditions.conditions;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import dev.uraneptus.fabricatedconditions.FabricatedConditions;
-import net.neoforged.neoforge.common.conditions.ICondition;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.List;
 import java.util.function.Function;

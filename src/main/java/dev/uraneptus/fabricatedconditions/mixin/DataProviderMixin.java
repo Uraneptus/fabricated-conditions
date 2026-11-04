@@ -1,11 +1,7 @@
 package dev.uraneptus.fabricatedconditions.mixin;
 
 import com.google.gson.JsonElement;
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.DataResult;
-import com.mojang.serialization.DynamicOps;
 import dev.uraneptus.fabricatedconditions.FabricatedConditions;
 import dev.uraneptus.fabricatedconditions.conditions.Handler;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
