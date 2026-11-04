@@ -1,6 +1,6 @@
 package dev.uraneptus.fabricatedconditions.mixin;
 
-import dev.uraneptus.fabricatedconditions.conditions.ConvertibleCondition;
+import dev.uraneptus.fabricatedconditions.ConvertibleCondition;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import org.spongepowered.asm.mixin.Mixin;
 

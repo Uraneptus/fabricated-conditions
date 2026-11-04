@@ -1,9 +1,9 @@
 package dev.uraneptus.fabricatedconditions.mixin;
 
-import dev.uraneptus.fabricatedconditions.FabricatedConditions;
-import dev.uraneptus.fabricatedconditions.conditions.ConvertibleCondition;
-import dev.uraneptus.fabricatedconditions.conditions.FabricAndCondition;
-import dev.uraneptus.fabricatedconditions.conditions.LoadCondition;
+import dev.uraneptus.fabricatedconditions.FabricatedConditionsMod;
+import dev.uraneptus.fabricatedconditions.ConvertibleCondition;
+import dev.uraneptus.fabricatedconditions.fake_fabric.FabricAndCondition;
+import dev.uraneptus.fabricatedconditions.fake_fabric.FakeFabricCondition;
 import net.neoforged.neoforge.common.conditions.AndCondition;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,14 +18,14 @@ public abstract class AndConditionMixin implements ConvertibleCondition {
     public abstract List<ICondition> children();
 
     @Override
-    public LoadCondition fabricatedconditions_convert() {
-        List<LoadCondition> children = children().stream()
+    public FakeFabricCondition fabricatedconditions_convert() {
+        List<FakeFabricCondition> children = children().stream()
                 .map(ConvertibleCondition.class::cast)
                 .map(ConvertibleCondition::fabricatedconditions_convert)
                 .filter(Objects::nonNull)
                 .toList();
         if (children.isEmpty()) {
-            FabricatedConditions.LOGGER.warn("Empty AND condition list");
+            FabricatedConditionsMod.LOGGER.warn("Empty AND condition list");
         }
         return new FabricAndCondition(children);
     }

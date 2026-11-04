@@ -1,4 +1,4 @@
-package dev.uraneptus.fabricatedconditions;
+package dev.uraneptus.fabricatedconditions.test;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -15,7 +15,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static dev.uraneptus.fabricatedconditions.FabricatedConditions.fcId;
+import static dev.uraneptus.fabricatedconditions.FabricatedConditionsMod.fcId;
 
 public class FabricatedConditionsExampleDataGenerator {
 
